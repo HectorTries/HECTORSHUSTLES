@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6M5YGV59P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G6M5YGV59P');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm Building a Tool That Finds the Best 30 Minutes of a 15-Hour Wedding Video</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
+  </style>
+</head>
+<body class="bg-zinc-50 text-zinc-900">
+  <!-- Navbar -->
+  <nav class="border-b border-zinc-200 bg-white">
+    <div class="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-x-3">
+        <a href="index.html" class="flex items-center gap-x-3">
+          <div class="w-9 h-9 bg-zinc-900 rounded-full flex items-center justify-center">
+            <span class="text-white text-lg font-semibold">H</span>
+          </div>
+          <span class="font-semibold text-xl tracking-tight">Hector's Hustles</span>
+        </a>
+      </div>
+      <div class="flex items-center gap-x-6 text-sm">
+        <a href="index.html" class="text-zinc-600 hover:text-zinc-900 transition-colors">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Post Content -->
+  <div class="max-w-3xl mx-auto px-6 pt-12 pb-16">
+    <div class="max-w-2xl">
+      <div class="text-sm text-zinc-500 mb-2">September 2026</div>
+      <h1 class="text-4xl font-semibold tracking-tighter heading-serif mb-6">I'm Building a Tool That Finds the Best 30 Minutes of a 15-Hour Wedding Video</h1>
+
+      <div class="prose prose-zinc max-w-none text-[15px] leading-relaxed">
+        <p>My wedding footage is 60GB of phone clips. Mostly guests filming on their phones. Some of it is great, most of it isn't, and a decent chunk is under two seconds of pocket noise.</p>
+
+        <p>Watching all of it would take hours. So I'm building a tool (<a href="https://cullify.io" class="text-zinc-900 underline">cullify.io</a>) that watches it for you and hands back the best bits, with timestamps and a reason for each pick. Hand an editor 30 minutes of gold instead of 60GB of "figure it out yourself."</p>
+
+        <p>Today was the day it got real. I started with a Python script that sends every clip to a vision model and asks three questions: what's happening here, is it worth keeping, and where's the good part. Then ffmpeg cuts the keepers. The model started throwing out the junk immediately. That part felt like cheating, it worked so fast.</p>
+
+        <p>Then came the actual product work. Server, domain, Stripe, a page where you watch the job progress, a page where you download the clips. That was most of the day.</p>
+
+        <p>The server has a 40GB disk. The wedding footage is 60GB. It doesn't fit. Which forced the rule the whole product now runs on: download one clip, process it, delete it, repeat. Never hold more than one file on disk at a time. It turned a hardware limit into a design principle.</p>
+
+        <p>Files over 2GB nearly killed the box twice. First my database column for file size maxed out at 2.1GB. A 5.5GB iPhone video broke it instantly. Then uploading a 2.9GB file loaded the whole thing into memory and the kernel killed the server. My own wedding footage took down my own server. Uploads now stream to disk in chunks instead of sitting in RAM.</p>
+
+        <p>The pipeline works end to end. Right now a benchmark is chewing through a test batch of 52 files and it's sorting the junk from the keepers with nobody watching. That's the thing I wanted to prove today: it works at scale without me in the loop.</p>
+
+        <p>What's left:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Paste a Dropbox folder link, walk away. The big one.</li>
+          <li>Zip download, editors don't want 40 links.</li>
+          <li>Pricing, once the benchmark numbers land.</li>
+          <li>Long term, conversational edits. "Make it 60 seconds, vows first." But selects come first.</li>
+        </ul>
+
+        <h3 class="font-semibold mt-8 mb-3">What actually got done this Saturday</h3>
+        <p>Went from a Python script to a live product in one day:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Server provisioned, domain live, HTTPS working</li>
+          <li>Stripe payments wired up end to end</li>
+          <li>Customer pages built: upload, progress, delivery</li>
+          <li>First benchmark running on real footage right now</li>
+        </ul>
+
+        <p class="mt-6">If you've got 15 hours of wedding footage sitting in a folder, you know exactly why this needs to exist.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-200 bg-white">
+    <div class="max-w-3xl mx-auto px-6 py-8 text-sm text-zinc-500 flex flex-col md:flex-row md:items-center md:justify-between gap-y-2">
+      <div>© Hector Wheatley</div>
+      <div>
+        <a href="index.html" class="hover:text-zinc-700 transition-colors">← Back to Hustles</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
