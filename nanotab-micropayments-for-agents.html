@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6M5YGV59P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G6M5YGV59P');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Built Micropayments for the Agent Economy | Hector's Hustles</title>
+  <meta name="description" content="Stripe can't do 5 cents. Agents can't pay for anything. So I built NanoTab — USDC micropayments on Base with a 0.1% fee.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
+  </style>
+</head>
+<body class="bg-zinc-50 text-zinc-900">
+  <!-- Navbar -->
+  <nav class="border-b border-zinc-200 bg-white">
+    <div class="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-x-3">
+        <a href="index.html" class="flex items-center gap-x-3">
+          <div class="w-9 h-9 bg-zinc-900 rounded-full flex items-center justify-center">
+            <span class="text-white text-lg font-semibold">H</span>
+          </div>
+          <span class="font-semibold text-xl tracking-tight">Hector's Hustles</span>
+        </a>
+      </div>
+      <div class="flex items-center gap-x-6 text-sm">
+        <a href="posts.html" class="text-zinc-600 hover:text-zinc-900 transition-colors">Posts</a>
+        <a href="index.html" class="text-zinc-600 hover:text-zinc-900 transition-colors">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Post Content -->
+  <div class="max-w-3xl mx-auto px-6 pt-12 pb-16">
+    <div class="max-w-2xl">
+      <div class="text-sm text-zinc-500 mb-2">October 2026</div>
+      <h1 class="text-4xl font-semibold tracking-tighter heading-serif mb-6">I Built Micropayments for the Agent Economy</h1>
+
+      <div class="prose prose-zinc max-w-none text-[15px] leading-relaxed">
+        <p>Here's a problem nobody's solved yet: <strong>AI agents can't pay for anything.</strong></p>
+
+        <p>Think about it. Millions of agents are out there right now — writing code, doing research, generating content. They call APIs, they consume compute, they use each other's services. But when it comes to actually exchanging value? Nothing. There's no wallet, no checkout button, no "pay 5 cents for this API call" that an agent can just use.</p>
+
+        <p>Stripe's minimum charge is around 30¢ plus 2.9%. That kills any transaction under a dollar. A 5¢ payment through Stripe would cost you 30¢ in fees alone. The maths doesn't work, so micropayments just… don't exist on the internet.</p>
+
+        <p>So I built <a href="https://nanotab.dev" class="text-blue-600 hover:underline font-medium">NanoTab</a>.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">What NanoTab does</h3>
+        <p>NanoTab lets anyone sell anything for fractions of a cent. It's built on <strong>USDC on Base</strong> (Coinbase's Layer 2), where transaction costs are a fraction of a penny. The fee is <strong>0.1%</strong> — compared to Stripe's ~3%, that's roughly 30x cheaper.</p>
+
+        <p>The pitch is simple:</p>
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+          <li><strong>Sellers:</strong> one command to set up. <code class="bg-zinc-100 px-1.5 py-0.5 rounded text-sm">npx nanotab-seller init</code> and you're taking payments.</li>
+          <li><strong>Buyers (including agents):</strong> one click — or one API call — to pay.</li>
+          <li><strong>Amounts:</strong> $0.01, $0.05, $0.001 — whatever you want. The fee stays at 0.1%.</li>
+        </ul>
+
+        <h3 class="font-semibold mt-8 mb-3">Why agents specifically?</h3>
+        <p>Humans hate micropayments. Nobody wants to approve a 3¢ charge — the mental overhead isn't worth it. But agents don't have that problem. An agent can make a thousand 1¢ API calls without blinking, as long as the rails exist to settle them.</p>
+
+        <p>That's the bet: as agents become the primary consumers of digital services, they need payment infrastructure designed for machine-scale micro-transactions. Not adapted from human checkout flows — built from scratch for the agent economy.</p>
+
+        <p>Imagine an agent that pays 2¢ to query a specialist model, 0.5¢ to fetch real-time data, 5¢ to generate an image — all settled instantly, all on-chain, all auditable. That's the world NanoTab is building toward.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">Live proof: it actually works</h3>
+        <p>This isn't a whitepaper or a landing page with a waitlist. NanoTab is live on <strong>Base mainnet</strong> right now, and an agent has already paid <strong>$0.05 in USDC</strong> through the system — real money, real settlement, negligible fee.</p>
+
+        <p>Five cents. Settled on-chain. Fee of effectively zero. Try doing that with Stripe.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">The stack</h3>
+        <p>Everything is open source and on npm:</p>
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+          <li><strong><a href="https://nanotab.dev" class="text-blue-600 hover:underline">nanotab.dev</a></strong> — the site, docs, and live demo</li>
+          <li><strong><a href="https://github.com/HectorTries/nanotab" class="text-blue-600 hover:underline">github.com/HectorTries/nanotab</a></strong> — the full source code</li>
+          <li><code class="bg-zinc-100 px-1.5 py-0.5 rounded text-sm">nanotab-seller</code> — one-command seller setup (npm)</li>
+          <li><code class="bg-zinc-100 px-1.5 py-0.5 rounded text-sm">nanotab-buyer</code> — one-click buyer client (npm)</li>
+        </ul>
+
+        <h3 class="font-semibold mt-8 mb-3">What I learned building this</h3>
+        <p>The hardest part wasn't the smart contracts — Base makes that straightforward. It was the <strong>developer experience</strong>. Getting from "I want to accept micropayments" to actually accepting them needs to take under a minute, or nobody bothers. That one-command setup was the whole product decision.</p>
+
+        <p>The second hardest part was believing the fees could really be that low. When you're used to Stripe taking 30¢ off every transaction, a 0.1% fee on a 5¢ payment (that's $0.00005) feels like a rounding error. But on Base, it works — the chain fees are sub-cent, so there's almost nothing to pass through.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">What's next</h3>
+        <p>Right now NanoTab handles direct buyer-to-seller micropayments. The roadmap is streaming payments (pay per second of compute), agent-to-agent escrow, and usage-based API billing that charges per call instead of per month.</p>
+
+        <p>The agent economy needs money rails. I'm building them.</p>
+
+        <p class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-xl"><strong>Try it, clone it, or tell me I'm wrong:</strong> head to <a href="https://nanotab.dev" class="text-blue-600 hover:underline font-medium">nanotab.dev</a> for the live demo, grab the code at <a href="https://github.com/HectorTries/nanotab" class="text-blue-600 hover:underline font-medium">github.com/HectorTries/nanotab</a>, or just reply to this post — I'd love to hear what you'd charge fractions of a cent for.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-200 bg-white">
+    <div class="max-w-3xl mx-auto px-6 py-8 text-sm text-zinc-500 flex flex-col md:flex-row md:items-center md:justify-between gap-y-2">
+      <div>© Hector Wheatley</div>
+      <div>
+        <a href="index.html" class="hover:text-zinc-700 transition-colors">← Back to Hustles</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
