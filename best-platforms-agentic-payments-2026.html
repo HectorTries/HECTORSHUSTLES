@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6M5YGV59P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G6M5YGV59P');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Platforms for Agentic Payments in 2026 (I Compared 11) | Hector's Hustles</title>
+  <meta name="description" content="Nevermined listed 10 agentic payment platforms and left mine out. Fair enough — so I wrote my own roundup: 11 platforms compared, NanoTab included, judged honestly.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
+  </style>
+</head>
+<body class="bg-zinc-50 text-zinc-900">
+  <!-- Navbar -->
+  <nav class="border-b border-zinc-200 bg-white">
+    <div class="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-x-3">
+        <a href="index.html" class="flex items-center gap-x-3">
+          <div class="w-9 h-9 bg-zinc-900 rounded-full flex items-center justify-center">
+            <span class="text-white text-lg font-semibold">H</span>
+          </div>
+          <span class="font-semibold text-xl tracking-tight">Hector's Hustles</span>
+        </a>
+      </div>
+      <div class="flex items-center gap-x-6 text-sm">
+        <a href="posts.html" class="text-zinc-600 hover:text-zinc-900 transition-colors">Posts</a>
+        <a href="index.html" class="text-zinc-600 hover:text-zinc-900 transition-colors">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Post Content -->
+  <div class="max-w-3xl mx-auto px-6 pt-12 pb-16">
+    <div class="max-w-2xl">
+      <div class="text-sm text-zinc-500 mb-2">October 2026</div>
+      <h1 class="text-4xl font-semibold tracking-tighter heading-serif mb-6">Best Platforms for Agentic Payments in 2026 (I Compared 11)</h1>
+
+      <div class="prose prose-zinc max-w-none text-[15px] leading-relaxed">
+        <p>Nevermined — one of the sharpest teams in agent payments — published a roundup of the 10 best platforms for agentic payments. Good list. One problem: my project wasn't on it.</p>
+
+        <p>Fair enough, honestly. <a href="https://nanotab.dev" class="text-blue-600 hover:underline font-medium">NanoTab</a> is a week old with a few hundred npm pulls. But rather than complain, I figured I'd write my own version — same roundup format, original writing, all 10 of their picks covered fairly, plus NanoTab judged honestly alongside them. If mine doesn't belong, you'll be able to tell.</p>
+
+        <p>Some context first: McKinsey estimates agentic commerce could hit <strong>$3–5 trillion by 2030</strong>. Millions of AI agents already call APIs and consume each other's services, but most still can't pay for anything. The payment rail is being built right now. Here's who's building it.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">1. Nevermined</h3>
+        <p><strong>Best for:</strong> agent-to-agent marketplaces. Nevermined is the closest thing this space has to an incumbent — per-call metering, usage-based access tokens, auditable agent spending. If you're building a marketplace where agents discover, pay, and rate each other, they're the most mature starting point. The trade-off is complexity: it's a platform to integrate, not a snippet to paste. Respect where it's due — they wrote the roundup I'm riffing on.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">2. NanoTab <span class="text-xs px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded-full align-middle">MY PROJECT · SIMPLEST ONBOARDING</span></h3>
+        <p><strong>Best for:</strong> anyone who wants to sell per API call this afternoon. Here's my honest pitch: NanoTab is the simplest way to put a price on an API call. One prompt — <em>"add pay-per-call at $0.05"</em> — wraps any endpoint in an x402 paywall settling in USDC on Base mainnet. Buyers pay via SDK (<code>paidFetch</code>), MCP tool, or WordPress plugin. The agent holds zero ETH — EIP-7702 smart accounts plus a Circle paymaster sponsor gas, so a 5¢ payment costs 5¢. Real mainnet transactions, live today at <code>gateway.nanotab.dev</code>. Week-one traction: 372 GitHub clones, ~500 npm pulls. It won't replace Stripe for your SaaS billing page. It's the rail for the transactions Stripe can't price — and it's <a href="https://github.com/HectorTries/nanotab" class="text-blue-600 hover:underline font-medium">open source</a>.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">3. Stripe Agentic Commerce</h3>
+        <p><strong>Best for:</strong> merchants already on Stripe. Delegated payment credentials let agents check out on a customer's behalf. Lowest friction if you already process cards through Stripe. The structural catch: 30¢ fixed fees make true micropayments uneconomical. Great for $20 agent checkouts; useless for 5¢ API calls.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">4. Skyfire</h3>
+        <p><strong>Best for:</strong> enterprises needing compliance-friendly agent payments. Skyfire raised serious VC to build "Visa for AI agents" — Know-Your-Agent identity, spending policies, procurement-friendly tooling. If you're a bank deploying agents with real budgets, they speak your language. For indie devs, heavier than needed.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">5. Coinbase x402</h3>
+        <p><strong>Best for:</strong> developers who want the open standard itself. x402 is the HTTP-native payment protocol (402 Payment Required, machine-readable, wallet-signed) and Coinbase maintains the reference implementation. Key distinction: x402 is a <em>protocol</em>, not a product — you still need a facilitator and wallet stack around it. NanoTab is built on x402; Coinbase gives you the spec, products like mine give you the onboarding. Start here to learn the standard.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">6. PayPal Agent Toolkit</h3>
+        <p><strong>Best for:</strong> PayPal merchants adding agent checkout. MCP-native tooling, buyer protection, 400M+ funded accounts. For consumer agent shopping ("buy these shoes for me"), that trust layer matters. Card-rail economics though — fine for commerce, wrong for micropayments.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">7. Visa Intelligent Commerce</h3>
+        <p><strong>Best for:</strong> issuers and large merchants. Tokenized credentials delegated to agents, wrapped in fraud and chargeback infrastructure. The safe choice for high-value agent purchases. Irrelevant below a dollar.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">8. Mastercard Agent Pay</h3>
+        <p><strong>Best for:</strong> banks and card programs. Mirrors Visa's approach — agent-ready credentials through existing acquirers, policy controls for delegated spend. Pick between the networks on banking relationships, not agent features. Both solve the $50 checkout; neither solves the 5¢ API call.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">9. Payman</h3>
+        <p><strong>Best for:</strong> developers wanting "Stripe for AI agents." Wallets for agents, payees, and humans with stablecoin settlement, docs-first, YC-backed. Solid for hackathons and MVPs where you want one API for "agent sends money." Less opinionated about x402; more full-stack wallet product.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">10. Prava</h3>
+        <p><strong>Best for:</strong> cross-chain agent payments. Routing, bridging, and settlement orchestration for agents holding assets on one chain and paying on another. Niche, but real and growing.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">11. Nekuda <span class="text-xs px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full align-middle">ACQUIRED BY PAYPAL</span></h3>
+        <p><strong>Best for:</strong> PayPal ecosystem builders. Nekuda built agent payment infra promising enough that PayPal acquired them in 2025 — the tech now lives inside PayPal's agent toolkit. Listed because their architecture influenced the whole space, and as a reminder: in this market, building well gets you bought.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">So where does NanoTab actually stand?</h3>
+        <p>I'm not going to claim #1. Nevermined is more mature, Stripe has 10,000x the volume, and the card networks own high-value checkout. But there are two columns in this comparison where almost everyone else says "not our problem": <strong>true micropayments under $1</strong> and <strong>onboarding in one afternoon</strong>. That's the gap NanoTab fills — deliberately, and (so far) alone among x402 products. If you have an API and want it charging per call by tonight, <a href="https://nanotab.dev" class="text-blue-600 hover:underline font-medium">try it</a>. If I'm wrong about the gap, tell me — I'd genuinely like to know.</p>
+
+        <h3 class="font-semibold mt-8 mb-3">The protocol-first future</h3>
+        <p>The pattern across all 11: card networks are bolting agent credentials onto 1970s rails, while the crypto-native side converges on x402 as the shared standard. Open protocols beat walled gardens every time the internet has run this experiment. The winners won't have the most press releases — they'll be the ones where a developer goes from "I have an API" to "my API charges per call" in one afternoon.</p>
+
+        <p class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-xl"><strong>Full comparison with fee table:</strong> the long-form version with a side-by-side table lives at <a href="https://nanotab.dev/best-platforms-agentic-payments.html" class="text-blue-600 hover:underline font-medium">nanotab.dev/best-platforms-agentic-payments</a>. Code's at <a href="https://github.com/HectorTries/nanotab" class="text-blue-600 hover:underline font-medium">github.com/HectorTries/nanotab</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-200 bg-white">
+    <div class="max-w-3xl mx-auto px-6 py-8 text-sm text-zinc-500 flex flex-col md:flex-row md:items-center md:justify-between gap-y-2">
+      <div>© Hector Wheatley</div>
+      <div>
+        <a href="index.html" class="hover:text-zinc-700 transition-colors">← Back to Hustles</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
